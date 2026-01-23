@@ -466,6 +466,21 @@
   flex-direction: column;
 }
 /* ====================
+   SERVICE CARD ICONS
+   ==================== */
+   .service-icon {
+  font-size: 22px;
+  margin-bottom: 12px;
+  display: inline-block;
+  color: var(--accent);
+  opacity: 0.85;
+}
+
+.card:hover .service-icon {
+  filter: drop-shadow(0 0 6px rgba(108,242,194,0.4));
+}
+
+/* ====================
    SERVICES – VERTICAL RHYTHM LINE
    ==================== */
    .services-grid {
@@ -779,6 +794,7 @@ aria-hidden="true"
       <div class="services-grid">
 
         <div class="service-card">
+          <div class="service-icon">🧠</div>
           <h3>Custom AI Products</h3>
           <p>
             We design and build production-ready AI products — from concept to deployment —
@@ -787,6 +803,7 @@ aria-hidden="true"
         </div>
       
         <div class="service-card">
+          <div class="service-icon">🤖</div>
           <h3>GenAI & LLM Systems</h3>
           <p>
             Intelligent chatbots, copilots, RAG pipelines, and LLM-powered applications
@@ -795,6 +812,7 @@ aria-hidden="true"
         </div>
       
         <div class="service-card">
+          <div class="service-icon">📊</div>
           <h3>Data & MLOps</h3>
           <p>
             Robust data pipelines, model training workflows, monitoring, and infrastructure
@@ -803,6 +821,7 @@ aria-hidden="true"
         </div>
       
         <div class="service-card">
+          <div class="service-icon">🧭</div>
           <h3>AI Consulting</h3>
           <p>
             Strategic guidance on AI adoption, system architecture, and technical leadership
