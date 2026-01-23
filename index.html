@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ====================
+       BASIC META & SEO
+       ==================== -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ie Danny | AI Product Development & GenAI Solutions</title>
+  <meta name="description" content="ie Danny is a product-first AI development company building scalable, secure, and production-ready AI solutions for startups and enterprises using Machine Learning, Generative AI, and Data Engineering.." />
+
+
+  <!-- ====================
+       Performance (Safe), FONTS
+       ==================== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- ====================
+       SCHEMA (NON-VISUAL)
+       ==================== -->
+       <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "ie Danny",
+          "description": "AI product development company specializing in GenAI and LLM systems",
+          "email": "contact@indispensableexpress.com"
+        }
+        </script>
+
+      
+  <!-- ====================
+       GLOBAL STYLES
+       ==================== -->
+  <style>
+    :root {
+      --bg: #0b0f1a;
+      --card: rgba(255, 255, 255, 0.06);
+      --text: #e6e9f0;
+      --muted: #a0a4b8;
+      --accent: #6cf2c2;
+      --accent-2: #6aa6ff;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: radial-gradient(1200px 600px at top right, #16213e, var(--bg));
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 80px 24px;
+    }
+    
+    /* ====================
+   AI SVG BACKGROUND
+   ==================== */
+.ai-bg {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+
+    /* ====================
+       TYPOGRAPHY
+       ==================== */
+    h1 {
+      font-size: 48px;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    h2 {
+      font-size: 28px;
+      margin: 64px 0 16px;
+    }
+
+    h3 {
+      font-size: 20px;
+      margin: 32px 0 8px;
+    }
+
+    p {
+      color: var(--muted);
+      max-width: 720px;
+    }
+
+    /* ====================
+       BUTTONS / CTA
+       ==================== */
+    .cta {
+      display: inline-block;
+      margin-top: 24px;
+      padding: 12px 20px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: #0b0f1a;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+            /* ====================
+       NAVBAR & LOGO ANIMATION
+       ==================== */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(12px);
+      background: rgba(11, 15, 26, 0.75);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 12px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      height: 56px;              /* Bigger navbar logo */
+      width: auto;
+      animation: logoFloat 4s ease-in-out infinite;
+    }
+
+    .nav-cta {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 500;
+      padding: 8px 14px;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .nav-cta:hover {
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .nav-cta::before {
+  content: "📞 ";
+}
+
+
+    @keyframes logoFloat {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-6px); }
+      100% { transform: translateY(0px); }
+    }
+
+    /* ====================
+       HERO LOGO STYLES
+       ==================== */
+    .logo {
+      max-width: 120px;          /* Controlled hero logo size */
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      animation: fadeInUp 1.2s ease forwards;
+      opacity: 0;
+    }
+
+    /* ====================
+   HERO LOGO GLOW
+   ==================== */
+.logo-glow {
+  position: relative;
+  display: inline-block;
+}
+
+.logo-glow::before {
+  content: "";
+  position: absolute;
+  inset: -40%;
+  background: radial-gradient(
+    circle,
+    rgba(108, 242, 194, 0.35),
+    rgba(106, 166, 255, 0.15),
+    transparent 70%
+  );
+  filter: blur(40px);
+  z-index: -1;
+  animation: glowPulse 6s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+  0% {
+    opacity: 0.45;
+    transform: scale(0.95);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.05);
+  }
+  100% {
+    opacity: 0.45;
+    transform: scale(0.95);
+  }
+}
+
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* ====================
+       LAYOUT COMPONENTS
+       ==================== */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+      margin-top: 32px;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: 16px;
+      padding: 24px;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    ul {
+      padding-left: 20px;
+      color: var(--muted);
+    }
+
+    /* ====================
+       FOOTER
+       ==================== */
+    footer {
+      margin-top: 120px;
+      padding-top: 32px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* ====================
+       RESPONSIVE
+       ==================== */
+                @media (max-width: 600px) {
+      h1 { font-size: 34px; }
+      .logo { max-width: 90px; }
+      .nav-logo { height: 44px; }
+      header { flex-direction: column; align-items: flex-start; }
+    }
+      .logo { max-width: 140px; }
+      .nav-logo { height: 34px; }
+    }
+      .logo {
+        max-width: 140px;   /* Smaller logo on mobile */
+      }
+    }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- AI Themed SVG Background -->
+<svg
+class="ai-bg"
+viewBox="0 0 1200 800"
+preserveAspectRatio="xMidYMid slice"
+aria-hidden="true"
+>
+<defs>
+  <linearGradient id="aiGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+    <stop offset="0%" stop-color="#6cf2c2"/>
+    <stop offset="100%" stop-color="#6aa6ff"/>
+  </linearGradient>
+</defs>
+
+<!-- Connections -->
+<g stroke="url(#aiGradient)" stroke-width="1" opacity="0.25">
+  <line x1="200" y1="100" x2="400" y2="200"/>
+  <line x1="400" y1="200" x2="600" y2="120"/>
+  <line x1="600" y1="120" x2="800" y2="260"/>
+  <line x1="300" y1="400" x2="500" y2="300"/>
+  <line x1="500" y1="300" x2="700" y2="420"/>
+  <line x1="700" y1="420" x2="900" y2="350"/>
+</g>
+
+<!-- Nodes -->
+<g fill="url(#aiGradient)" opacity="0.4">
+  <circle cx="200" cy="100" r="4"/>
+  <circle cx="400" cy="200" r="5"/>
+  <circle cx="600" cy="120" r="4"/>
+  <circle cx="800" cy="260" r="5"/>
+  <circle cx="300" cy="400" r="4"/>
+  <circle cx="500" cy="300" r="5"/>
+  <circle cx="700" cy="420" r="4"/>
+  <circle cx="900" cy="350" r="5"/>
+</g>
+</svg>
+
+
+  <!-- ====================
+       STICKY NAVBAR
+       ==================== -->
+  <nav class="navbar">
+    <div class="nav-inner">
+      <img src="assets/ie danny.png" alt="ie Danny AI product development logo" class="nav-logo" />
+      <a href="tel:+919810761389" class="nav-cta">Call</a>
+    </div>
+  </nav>
+
+  <div class="container">
+
+    <!-- ====================
+         HERO / HEADER SECTION
+         ==================== -->
+        <!-- ====================
+         HERO / HEADER SECTION
+         ==================== -->
+        <header style="display:flex; flex-direction:row; align-items:center; gap:48px; flex-wrap:wrap;">
+
+      <!-- Logo -->
+      <!-- Logo source: assets/ie danny.png -->
+      <div class="logo-glow">
+        <img 
+          src="assets/ie danny.png" 
+          alt="ie Danny logo" 
+          class="logo"
+        />
+      </div>
+      
+
+      <!-- Hero Content -->
+      <h1>Design. Build. Launch AI Products.</h1>
+      <p><strong>ie Danny</strong> is a product-first AI development company building scalable, secure, and production-ready AI solutions for startups and enterprise susing Machine Learning, Generative AI, and Data Engineering..</p>
+      <a class="cta" href="mailto:contact@indispensableexpress.com">Start Your AI Journey →</a>
+    </header>
+
+    <!-- ====================
+         WHAT WE BUILD / ABOUT
+         ==================== -->
+    <section>
+      <h2>What We Build</h2>
+      <p>High-impact AI systems designed for real business outcomes.</p>
+      <ul>
+        <li>Custom AI & ML products</li>
+        <li>LLM & GenAI applications</li>
+        <li>AI automation platforms</li>
+        <li>Chatbots, copilots</li>
+        <li>Analytics and custom AI agents.</li>
+      </ul>
+    </section>
+
+    <!-- ====================
+         SERVICES SECTION
+         ==================== -->
+    <section>
+      <h2>Services</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Custom AI Products</h3>
+          <p>End-to-end AI product development tailored to your business needs.</p>
+        </div>
+        <div class="card">
+          <h3>GenAI & LLM Systems</h3>
+          <p>Chatbots, copilots, RAG pipelines, and intelligent assistants.</p>
+        </div>
+        <div class="card">
+          <h3>Data & MLOps</h3>
+          <p>Data pipelines, model training, monitoring, and scaling.</p>
+        </div>
+        <div class="card">
+          <h3>AI Consulting</h3>
+          <p>AI strategy, architecture design, and technical leadership.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================
+         PROCESS SECTION
+         ==================== -->
+    <section>
+      <h2>Our Process</h2>
+      <div class="grid">
+        <div class="card"><strong>1. Discover</strong><br/>Business goals, data, and feasibility.</div>
+        <div class="card"><strong>2. Design</strong><br/>System architecture and UX.</div>
+        <div class="card"><strong>3. Build</strong><br/>Model development and integration.</div>
+        <div class="card"><strong>4. Launch</strong><br/>Secure deployment and monitoring.</div>
+      </div>
+    </section>
+
+    <!-- ====================
+         CONTACT / CTA SECTION
+         ==================== -->
+    <section>
+      <h2>Let’s Build Something Intelligent</h2>
+      <p>Share your idea and we’ll help you turn it into a scalable AI product.</p>
+      <a class="cta" href="mailto:contact@indispensableexpress.com">Contact Us</a>
+    </section>
+
+    <!-- ====================
+         FOOTER SECTION
+         ==================== -->
+    <footer>
+      <p><strong>ie Danny</strong><br/>Custom AI Product Development<br/>© 2026 ie Danny</p>
+    </footer>
+
+  </div>
+</body>
+</html>
