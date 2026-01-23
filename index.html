@@ -235,6 +235,25 @@
       margin-top: 32px;
     }
 
+    .build-layout {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.build-cards {
+  display: grid;
+  gap: 16px;
+}
+
+.build-card {
+  background: var(--card);
+  padding: 16px 20px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
     .card {
       background: var(--card);
       border-radius: 16px;
@@ -260,22 +279,388 @@
     }
 
     /* ====================
+   WHAT WE BUILD – LEFT PANEL
+   ==================== */
+.build-left {
+  background: rgba(255,255,255,0.03);
+  border-radius: 16px;
+  padding: 28px 32px;
+  border: 1px solid rgba(255,255,255,0.08);
+  position: relative;
+}
+
+.build-left::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 24px;
+  bottom: 24px;
+  width: 3px;
+  background: linear-gradient(
+    180deg,
+    var(--accent),
+    var(--accent-2)
+  );
+  border-radius: 2px;
+}
+
+.build-left ul {
+  margin-top: 16px;
+}
+/* ====================
+   AI SIGNAL NOISE (VISIBLE OVER SVG)
+   ==================== */
+   .build-left::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(
+      135deg,
+      rgba(108,242,194,0.05),
+      rgba(108,242,194,0.05) 1px,
+      transparent 1px,
+      transparent 14px
+    ),
+    repeating-linear-gradient(
+      -135deg,
+      rgba(106,166,255,0.04),
+      rgba(106,166,255,0.04) 1px,
+      transparent 1px,
+      transparent 18px
+    );
+  opacity: 0.8;
+  pointer-events: none;
+  border-radius: 16px;
+}
+
+.build-left > * {
+  position: relative;
+  z-index: 1;
+}
+/* ====================
+   SIGNAL ANIMATION
+   ==================== */
+@keyframes signalDrift {
+  from { background-position: 0 0; }
+  to { background-position: 200px 200px; }
+}
+/* Attach animation */
+.build-left::after {
+  animation: signalDrift 40s linear infinite;
+}
+/* WHAT WE BUILD – RIGHT (VERTICAL) */
+.build-right {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.build-item:hover {
+  transform: translateX(4px);
+}
+
+
+.build-item {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px;
+  padding: 18px 20px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.build-item::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at top left,
+    rgba(108,242,194,0.12),
+    transparent 60%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.build-item:hover {
+  transform: translateY(-4px);
+  border-color: rgba(108,242,194,0.35);
+}
+
+.build-item:hover::before {
+  opacity: 1;
+}
+
+.build-item span {
+  position: relative;
+  z-index: 1;
+  color: var(--text);
+  font-weight: 500;
+}
+/* ====================
+   SERVICES – PREMIUM CARDS
+   ==================== */
+   .services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.service-card {
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,0.06),
+    rgba(255,255,255,0.02)
+  );
+  border-radius: 18px;
+  padding: 28px;
+  border: 1px solid rgba(255,255,255,0.1);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.35s ease;
+}
+
+.service-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at top left,
+    rgba(108,242,194,0.15),
+    transparent 60%
+  );
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(108,242,194,0.35);
+}
+
+.service-card:hover::before {
+  opacity: 1;
+}
+
+.service-card h3 {
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+.service-card p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.service-card > * {
+  position: relative;
+  z-index: 1;
+}
+.service-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+/* ====================
+   SERVICES – VERTICAL RHYTHM LINE
+   ==================== */
+   .services-grid {
+  position: relative;
+}
+
+.services-grid::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 1px;
+  transform: translateX(-50%);
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(255,255,255,0.08),
+    transparent
+  );
+  pointer-events: none;
+}
+
+
+/* ====================
+   OUR PROCESS – CONNECTED FLOW
+   ==================== */
+   .process-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+  position: relative;
+  margin-top: 32px;
+}
+
+.process-step {
+  background: rgba(255,255,255,0.04);
+  border-radius: 16px;
+  padding: 24px 22px;
+  border: 1px solid rgba(255,255,255,0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+.process-step::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at top left,
+    rgba(106,166,255,0.15),
+    transparent 60%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.process-step:hover::before {
+  opacity: 1;
+}
+
+.process-step h4 {
+  margin: 0 0 8px;
+  font-size: 15px;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.process-step h3 {
+  margin: 0 0 10px;
+  font-size: 18px;
+}
+
+.process-step p {
+  margin: 0;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.process-step > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ====================
+   PROCESS – PROGRESSIVE ANIMATION
+   ==================== */
+   .process-step {
+  opacity: 0;
+  transform: translateY(16px);
+  animation: processFadeUp 0.6s ease forwards;
+}
+
+/* staggered reveal */
+.process-step:nth-child(1) { animation-delay: 0.1s; }
+.process-step:nth-child(2) { animation-delay: 0.25s; }
+.process-step:nth-child(3) { animation-delay: 0.4s; }
+.process-step:nth-child(4) { animation-delay: 0.55s; }
+
+@keyframes processFadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* ====================
+   PROCESS – ACTIVE STEP HIGHLIGHT
+   ==================== */
+   .process-step:hover {
+  border-color: rgba(108,242,194,0.4);
+  box-shadow:
+    0 0 0 1px rgba(108,242,194,0.15),
+    0 12px 30px rgba(108,242,194,0.08);
+}
+
+.process-step:hover h4 {
+  color: var(--accent-2);
+}
+/* ====================
+   SECTION DIVIDER
+   ==================== */
+   .section-divider {
+  width: 100%;
+  height: 1px;
+  margin: 80px 0;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(108,242,194,0.35),
+    transparent
+  );
+  position: relative;
+}
+
+.section-divider::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 140px;
+  height: 2px;
+  transform: translate(-50%, -50%);
+  background: rgba(108,242,194,0.7);
+  filter: blur(2px);
+  animation: dividerPulse 6s ease-in-out infinite;
+}
+
+@keyframes dividerPulse {
+  0% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0.3;
+  }
+}
+
+    /* ====================
        RESPONSIVE
        ==================== */
                 @media (max-width: 600px) {
       h1 { font-size: 34px; }
       .logo { max-width: 90px; }
       .nav-logo { height: 44px; }
+      @media (max-width: 800px) {
+  .build-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
       header { flex-direction: column; align-items: flex-start; }
     }
+    @media (max-width: 800px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+  .services-grid::before {
+  display: none;
+}
+
+}
+@media (max-width: 800px) {
+  .section-divider {
+    margin: 56px 0;
+  }
+}
+
+
       .logo { max-width: 140px; }
       .nav-logo { height: 34px; }
-    }
       .logo {
         max-width: 140px;   /* Smaller logo on mobile */
       }
-    }
-    }
   </style>
 </head>
 <body>
@@ -360,52 +745,107 @@ aria-hidden="true"
          ==================== -->
     <section>
       <h2>What We Build</h2>
-      <p>High-impact AI systems designed for real business outcomes.</p>
-      <ul>
-        <li>Custom AI & ML products</li>
-        <li>LLM & GenAI applications</li>
-        <li>AI automation platforms</li>
-        <li>Chatbots, copilots</li>
-        <li>Analytics and custom AI agents.</li>
-      </ul>
+        
+      <div class="build-layout">
+        <!-- LEFT -->
+        <div class="build-left">
+          <p><strong>High-impact AI systems</strong> designed for real business outcomes.</p>
+          <ul>
+            <li>Custom AI & ML products</li>
+            <li>LLM & GenAI applications</li>
+            <li>AI automation platforms</li>
+            <li>Chatbots, copilots</li>
+            <li>Analytics and custom AI agents</li>
+          </ul>
+        </div>
+        
+        
+        <!-- RIGHT -->
+        <div class="build-right">
+          <div class="build-item"><span>🚀 Production-ready systems</span></div>
+          <div class="build-item"><span>🔒 Secure & scalable architecture</span></div>
+          <div class="build-item"><span>⚡ Fast MVP → Enterprise scale</span></div>
+          <div class="build-item"><span>🧠 Real-world AI, not demos</span></div>
+        </div>
+      </div>
     </section>
+        
 
     <!-- ====================
          SERVICES SECTION
          ==================== -->
     <section>
       <h2>Services</h2>
-      <div class="grid">
-        <div class="card">
+      <div class="services-grid">
+
+        <div class="service-card">
           <h3>Custom AI Products</h3>
-          <p>End-to-end AI product development tailored to your business needs.</p>
+          <p>
+            We design and build production-ready AI products — from concept to deployment —
+            tailored precisely to your business goals.
+          </p>
         </div>
-        <div class="card">
+      
+        <div class="service-card">
           <h3>GenAI & LLM Systems</h3>
-          <p>Chatbots, copilots, RAG pipelines, and intelligent assistants.</p>
+          <p>
+            Intelligent chatbots, copilots, RAG pipelines, and LLM-powered applications
+            engineered for reliability and scale.
+          </p>
         </div>
-        <div class="card">
+      
+        <div class="service-card">
           <h3>Data & MLOps</h3>
-          <p>Data pipelines, model training, monitoring, and scaling.</p>
+          <p>
+            Robust data pipelines, model training workflows, monitoring, and infrastructure
+            that keep AI systems performant in production.
+          </p>
         </div>
-        <div class="card">
+      
+        <div class="service-card">
           <h3>AI Consulting</h3>
-          <p>AI strategy, architecture design, and technical leadership.</p>
-        </div>
-      </div>
+          <p>
+            Strategic guidance on AI adoption, system architecture, and technical leadership
+            to help teams execute with confidence.
+          </p>
+        </div>      
+      </div>     
     </section>
+
+    <div class="section-divider"></div>
 
     <!-- ====================
          PROCESS SECTION
          ==================== -->
     <section>
       <h2>Our Process</h2>
-      <div class="grid">
-        <div class="card"><strong>1. Discover</strong><br/>Business goals, data, and feasibility.</div>
-        <div class="card"><strong>2. Design</strong><br/>System architecture and UX.</div>
-        <div class="card"><strong>3. Build</strong><br/>Model development and integration.</div>
-        <div class="card"><strong>4. Launch</strong><br/>Secure deployment and monitoring.</div>
+      <div class="process-grid">
+
+        <div class="process-step">
+          <h4>STEP 01</h4>
+          <h3>Discover</h3>
+          <p>Understand business goals, data readiness, and technical feasibility.</p>
+        </div>
+      
+        <div class="process-step">
+          <h4>STEP 02</h4>
+          <h3>Design</h3>
+          <p>Define system architecture, model strategy, and user experience.</p>
+        </div>
+      
+        <div class="process-step">
+          <h4>STEP 03</h4>
+          <h3>Build</h3>
+          <p>Develop, integrate, and validate AI models within your product.</p>
+        </div>
+      
+        <div class="process-step">
+          <h4>STEP 04</h4>
+          <h3>Launch</h3>
+          <p>Deploy securely, monitor performance, and iterate in production.</p>
+        </div>      
       </div>
+      
     </section>
 
     <!-- ====================
